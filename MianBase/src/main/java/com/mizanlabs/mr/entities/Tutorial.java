@@ -1,0 +1,70 @@
+package com.mizanlabs.mr.entities;
+
+import jakarta.persistence.*;
+
+@Entity
+public class Tutorial {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    @Column(name = "title")
+    private String title;
+
+    @Column(name = "description")
+    private String description;
+
+    @Column(name = "published")
+    private boolean published;
+
+    public Tutorial() {
+        super();
+    }
+
+    public Tutorial(String title, String description, boolean published) {
+        super();
+        this.title = title;
+        this.description = description;
+        this.published = published;
+    }
+
+    public Tutorial(long id, String title, String description, boolean published) {
+        super();
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.published = published;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public boolean isPublished() {
+        return published;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setPublished(boolean published) {
+        this.published = published;
+    }
+}
