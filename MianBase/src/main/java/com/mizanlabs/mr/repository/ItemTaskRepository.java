@@ -1,8 +1,8 @@
 package com.mizanlabs.mr.repository;
 
-public class ContactsClientsRepository {
+public class ItemTaskRepository {
 
-	public ContactsClientsRepository() {
+	public ItemTaskRepository() {
 		// TODO Auto-generated constructor stub
 	}
 

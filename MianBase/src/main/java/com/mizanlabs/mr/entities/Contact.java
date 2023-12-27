@@ -7,6 +7,8 @@ package com.mizanlabs.mr.entities;
 import jakarta.persistence.*;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 @Table(name = "contacts")
 public class Contact {
@@ -115,6 +117,7 @@ public class Contact {
             joinColumns = { @JoinColumn(name = "contact_id") },
             inverseJoinColumns = { @JoinColumn(name = "client_id") }
     )
+    @JsonIgnoreProperties("contacts")
     Set<Client> clients;
 
 }

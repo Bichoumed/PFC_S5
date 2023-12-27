@@ -13,6 +13,5 @@ public class MizanBase {
         SpringApplication.run(MizanBase.class, args);
     }
 
-
 }
 

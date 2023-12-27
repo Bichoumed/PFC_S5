@@ -7,9 +7,9 @@ import jakarta.persistence.*;
 @Table(name = "contacts_clients")
 public class ContactsClients {
 
-    @EmbeddedId
-    private ContactsClientsId id;
-
+	 @Id
+	    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	    private Long id;
     @ManyToOne
     @MapsId("contactId")
     @JoinColumn(name = "contact_id")

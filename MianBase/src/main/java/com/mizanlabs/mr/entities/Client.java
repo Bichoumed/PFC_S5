@@ -3,6 +3,8 @@ package com.mizanlabs.mr.entities;
 import jakarta.persistence.*;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
                 @Entity
                 @Table(name = "clients")
                 public class Client {
@@ -29,6 +31,8 @@ import java.util.Set;
                     private String note;
 
                     @ManyToMany(mappedBy = "clients")
+                    @JsonIgnoreProperties("clients")
+
                     private Set<Contact> contacts;
 
                     // No-args constructor
