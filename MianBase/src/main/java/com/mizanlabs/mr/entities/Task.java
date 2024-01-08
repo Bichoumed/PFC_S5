@@ -122,5 +122,12 @@ public class Task {
 		// TODO Auto-generated constructor stub
 	}
 
- 
+	   @ManyToMany(cascade = { CascadeType.ALL })
+	    @JoinTable(
+	            name = "tasks_projects",
+	            joinColumns = { @JoinColumn(name = "task_id") },
+	            inverseJoinColumns = { @JoinColumn(name = "project_id") }
+	    )
+	    @JsonIgnoreProperties("tasks")
+	    Set<Projects> projects;
 }
