@@ -20,6 +20,8 @@ public class ContactController {
     }
 
     // Create a new contact
+    @CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
+
     @PostMapping
     public ResponseEntity<Contact> createContact(@RequestBody Contact contact) {
         Contact savedContact = contactService.createContact(contact);
@@ -27,12 +29,16 @@ public class ContactController {
     }
 
     // Get all contacts
+    @CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
+
     @GetMapping
     public List<Contact> getAllContacts() {
         return contactService.getAllContacts();
     }
 
     // Get a single contact by ID
+    @CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
+
     @GetMapping("/{id}")
     public ResponseEntity<Contact> getContactById(@PathVariable Long id) {
         return contactService.getContactById(id)
@@ -41,6 +47,8 @@ public class ContactController {
     }
 
     // Update a contact
+    @CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
+
     @PutMapping("/{id}")
     public ResponseEntity<Contact> updateContact(@PathVariable Long id, @RequestBody Contact contact) {
         return contactService.updateContact(id, contact)
@@ -49,6 +57,8 @@ public class ContactController {
     }
 
     // Delete a contact
+    @CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteContact(@PathVariable Long id) {
         if (contactService.deleteContact(id)) {
